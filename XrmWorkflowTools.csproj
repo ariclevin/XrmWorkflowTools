@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>XrmWorkflowTools</RootNamespace>
     <AssemblyName>XrmWorkflowTools</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Crm.Sdk.Proxy">
+      <HintPath>..\..\..\..\..\CRM\SDK\365\SDK\Bin\Microsoft.Crm.Sdk.Proxy.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Xrm.Sdk">
       <HintPath>..\..\..\..\..\CRM\SDK\365\SDK\Bin\Microsoft.Xrm.Sdk.dll</HintPath>
     </Reference>
@@ -40,7 +44,9 @@
       <HintPath>packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Activities" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,9 +55,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ChangeProcessStage.cs" />
+    <Compile Include="CreateEmailFromTemplate.cs" />
     <Compile Include="DynamicUrlParser.cs" />
+    <Compile Include="GenerateCompositeAddress.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="AssignChildRecords.cs" />
+    <Compile Include="SetStateChildRecords.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

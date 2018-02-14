@@ -10,7 +10,7 @@ using Microsoft.Xrm.Sdk.Metadata.Query;
 using Microsoft.Xrm.Sdk.Query;
 using Newtonsoft.Json;
 
-namespace SBS.Workflow
+namespace XrmWorkflowTools
 {
     /// <summary> 
     /// Used to parse the Dynamics CRM 'Record Url (Dynamic)' that can be created by workflows and dialogs 
@@ -91,5 +91,15 @@ namespace SBS.Workflow
 
             return null;
         }
+    }
+
+    public class JsonEntityReference
+    {
+        [JsonProperty(PropertyName = "entityType")]
+        public string LogicalName { get; set; }
+
+        [JsonProperty(PropertyName = "id")]
+        public Guid Id { get; set; }
+
     }
 }
